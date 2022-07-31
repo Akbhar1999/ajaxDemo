@@ -19,12 +19,11 @@ const renderUI = (data) => {
   contentDiv.insertAdjacentElement("beforeend", contentParagraph);
 };
 
-const createParagraph = (data) => {
-  return Object.assign(document.createElement("p"), {
+const createParagraph = (data) => Object.assign(document.createElement("p"), {
     className: "pt-2",
     textContent: data,
   });
-};
+
 
 const loadTextFile = async () => {
   try {
