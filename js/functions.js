@@ -3,7 +3,7 @@ let counter = 0;
 const pageTitle = _ => "text file demo using Async";
 const btnTextFile = document.querySelector("#button");
 const handleClick = _ =>
-  btnTextFile.addEventListener("click", (_) => showContent());
+  btnTextFile.addEventListener("click", _ => showContent());
 
 const showContent = _ => {
   counter++;
