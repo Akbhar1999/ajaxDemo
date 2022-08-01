@@ -1,25 +1,24 @@
 // object assign url: https://discourse.wicg.io/t/passing-an-object-of-attributes-to-document-createelement-as-the-second-argument/809/21?page=2
-
-const pageTitle = () => "text file demo using Async";
-const btnTextFile = document.querySelector("#button");
 let counter = 0;
-const handleClick = () =>
+const pageTitle = _ => "text file demo using Async";
+const btnTextFile = document.querySelector("#button");
+const handleClick = _ =>
   btnTextFile.addEventListener("click", (_) => showContent());
 
-const showContent = (_) => {
+const showContent = _ => {
   counter++;
   if (counter === 1) {
     loadTextFile();
     btnTextFile.disabled = true;
   }
 };
-const renderUI = (data) => {
+const renderUI = data => {
   let contentParagraph = createParagraph(data);
   let contentDiv = document.querySelector("#content");
   contentDiv.insertAdjacentElement("beforeend", contentParagraph);
 };
 
-const createParagraph = (data) => Object.assign(document.createElement("p"), {
+const createParagraph = data => Object.assign(document.createElement("p"), {
     className: "pt-2",
     textContent: data,
   });
