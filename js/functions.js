@@ -2,8 +2,7 @@
 let counter = 0;
 const pageTitle = _ => "text file demo using Async";
 const btnTextFile = document.querySelector("#button");
-const handleClick = _ =>
-  btnTextFile.addEventListener("click", _ => showContent());
+const handleClick = _ => btnTextFile.addEventListener("click", _ => showContent());
 
 const showContent = _ => {
   counter++;
@@ -12,6 +11,7 @@ const showContent = _ => {
     btnTextFile.disabled = true;
   }
 };
+
 const renderUI = data => {
   let contentParagraph = createParagraph(data);
   let contentDiv = document.querySelector("#content");
@@ -34,4 +34,5 @@ const loadTextFile = async () => {
     console.error(`There was an error fetching text file ${e.message}`);
   }
 };
+
 export { loadTextFile, handleClick, pageTitle };
