@@ -26,9 +26,8 @@ const createParagraph = data => Object.assign(document.createElement("p"), {
 
 const loadTextFile = async () => {
   try {
-    const URL = "sample.txt";
-    const response = await fetch(URL);
-    const data = await response.text();
+    const url = "sample.txt";
+    let data = await(await (fetch(url))).text();
     renderUI(data);
   } catch (e) {
     console.error(`There was an error fetching text file ${e.message}`);
