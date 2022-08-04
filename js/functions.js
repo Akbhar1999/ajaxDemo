@@ -32,7 +32,7 @@ const createParagraph = data => Object.assign(document.createElement("p"), {
 const loadTextFile = async () => {
 
   try {
-    const url = "samples.txt";
+    const url = "sample.txt";
     // shorter syntax without error handling working properly
     // const dataObject = await(await (fetch(url).catch(e => console.error('Unable to fetch the text file. Please check the file location.')))).text(); 
     const response = await fetch(url);
@@ -47,7 +47,7 @@ const loadTextFile = async () => {
 
 const handleError = (response) => {
   console.warn(response.status === 404 ? 'could not find the specified text file location': '');
-  return true;
+  return response.status === 404;
 };
 
 export { loadTextFile, handleClick, pageTitle };
