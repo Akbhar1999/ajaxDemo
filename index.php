@@ -5,4 +5,5 @@
   <hr>
   <button id="button" class="btn btn-primary text-capitalize">get text file</button>
 </div>
+
 <?php require_once 'templates/footer.php'; ?>

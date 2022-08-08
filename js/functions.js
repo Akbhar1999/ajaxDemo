@@ -37,8 +37,7 @@ const loadTextFile = async () => {
     // const dataObject = await(await (fetch(url).catch(e => console.error('Unable to fetch the text file. Please check the file location.')))).text(); 
     const response = await fetch(url);
     if (handleError(response)) return;
-    const data = await response.text();
-    return data;
+    return await response.text();
 
   } catch (e) {
     console.error(`There was an error fetching text file ${e.message}`);
@@ -46,8 +45,9 @@ const loadTextFile = async () => {
 };
 
 const handleError = (response) => {
-  console.warn(response.status === 404 ? 'could not find the specified text file location': '');
-  return response.status === 404;
+  const errorStatus = response.status === 404;
+  if (errorStatus) console.warn('could not find the specified text file location');
+  return errorStatus;
 };
 
 export { loadTextFile, handleClick, pageTitle };
