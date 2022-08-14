@@ -11,6 +11,7 @@ const showContent = _ => {
   if (counter === 1) {
 
     // extract details from request and render the UI
+    console.log(loadTextFile())
     loadTextFile().then(content => renderUI(content));
 
     btnTextFile.disabled = true;
